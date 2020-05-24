@@ -11,7 +11,7 @@ def apply_coupons(cart, coupons)
       new_item = {
         item: object[:item] + " W/COUPON",
         count: coupon[:num],
-        price: coupon[:cost] / coupon[:num],
+        price: (coupon[:cost] / coupon[:num]).round(2),
         clearance: object[:clearance]
       }
       coupon_cart << new_item
