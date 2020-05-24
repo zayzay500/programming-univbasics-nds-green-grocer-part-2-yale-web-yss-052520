@@ -47,14 +47,18 @@ def checkout(cart, coupons)
   # BEFORE it begins the work of calculating the total (or else you might have
   # some irritated customers
   consolidated_cart = consolidate_cart(cart)
+  binding.pry
   
   coupon_cart = apply_coupons(consolidated_cart, coupons)
+  binding.pry
   
   final_cart = apply_clearance(coupon_cart)
+  binding.pry
   sum = 0
   final_cart.each do |item|
     sum += item[:price]
   end
+  binding.pry
   if sum > 100
     sum *= 0.9
   end
