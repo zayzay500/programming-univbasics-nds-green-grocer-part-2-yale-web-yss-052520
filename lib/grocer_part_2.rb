@@ -6,7 +6,7 @@ def apply_coupons(cart, coupons)
   # REMEMBER: This method **should** update cart
   cart.each_with_object([]) do |object, coupon_cart|
     coupon = find_item_by_name_in_collection(object[:item], coupons)
-    if coupon && item[:count] >= coupon[:num]
+    if coupon && object[:count] >= coupon[:num]
       # binding.pry
       new_item = {
         item: object[:item] + " W/COUPON",
