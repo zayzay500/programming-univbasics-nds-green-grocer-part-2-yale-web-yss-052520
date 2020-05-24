@@ -55,5 +55,8 @@ def checkout(cart, coupons)
   final_cart.each do |item|
     sum += item[:price]
   end
+  if sum > 100
+    sum *= 0.9
+  end
   sum
 end
