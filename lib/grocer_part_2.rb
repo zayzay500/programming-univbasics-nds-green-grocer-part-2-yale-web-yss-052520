@@ -56,7 +56,7 @@ def checkout(cart, coupons)
   # binding.pry
   sum = 0
   final_cart.each do |item|
-    sum += item[:price]
+    sum += item[:price] * item[:count]
   end
   # binding.pry
   if sum > 100
